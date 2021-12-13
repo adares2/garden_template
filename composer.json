@@ -2,6 +2,7 @@
     "name": "tz/garden-template",
     "type": "typo3-cms-extension",
     "description": "template for garden",
+    "version" : "0.1.0",
     "authors": [
             {
                     "name": "Tobias Ziche",
