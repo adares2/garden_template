@@ -1,0 +1,111 @@
+//@import 'EXT:fluid_styled_content/Configuration/Typoscript/setup.typoscript'
+//@import 'EXT:garden_template/Configuration/Typoscript/Setup/*.typoscript'
+
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:garden_template/Configuration/TypoScript/Helper/DynamicContent.typoscript'
+
+page = PAGE
+page {
+   typeNum = 0
+   meta{
+      viewport = width=device-width, initial-scale=1
+      keywords = These are the keywords.
+   }
+    
+   //Fluid template section
+   10 = FLUIDTEMPLATE
+   10 {
+        templateName = TEXT
+        templateName.stdWrap.cObject = CASE
+        templateName.stdWrap.cObject {
+            key.data = pagelayout
+
+            pagets__garden_template_default = TEXT
+            pagets__garden_template_default.value = Default
+
+            default = TEXT
+            default.value = Default
+        }
+        templateRootPaths {
+            0 = EXT:garden_template/Resources/Private/Templates/Page/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:garden_template/Resources/Private/Partials/Page/
+            1 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:garden_template/Resources/Private/Layouts/Page/
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+         dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                levels = 2
+                includeSpacer = 2
+                as = mainnavigation
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20{
+                levels = 2
+                includeSpacer = 2
+                as = sitemap
+            }
+
+            //30 = Typo3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+           // 30{
+               // table = tt_content
+            //    orderBy = sorting
+            //    where = colPos = 0
+            //    as = maincontent
+            //}
+           
+        }
+   }
+
+   //CSS file inclusion
+   includeCSS {
+        website = EXT:garden_template/Resources/Public/Css/site.css
+        grid = EXT:garden_template/Resources/Public/Css/grid.css
+        container = EXT:garden_template/Resources/Public/css/container.css
+   }
+
+   //JavaScript file inclusion
+   includeJSFooter {
+       nav = EXT:garden_template/Resources/Public/JavaScript/nav.js
+        website = EXT:garden_template/Resources/Public/JavaScript/site.js
+        }
+}
+
+// global site configuration
+config {
+   absRefPrefix = auto
+   cache_period = 86400
+   debug = 0
+   disablePrefixComment = 1
+   doctype = html5
+   extTarget =
+   index_enable = 1
+   index_externals = 1
+   index_metatags = 1
+   inlineStyle2TempFile = 1
+   intTarget =
+   linkVars = L
+   metaCharset = utf-8
+   no_cache = 0
+   pageTitleFirst = 1
+   prefixLocalAnchors = all
+   removeDefaultJS = 0
+   sendCacheHeaders = 1
+
+   // Compression and concatenation of CSS and JS Files
+   compressCss = 0
+   compressJs = 0
+   concatenateCss = 0
+   concatenateJs = 0
+}
+
+
+
+
+

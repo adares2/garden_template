@@ -1,0 +1,22 @@
+<button  class="navbar-toggler"
+   type="button">
+</button>
+   
+<div class="container" id="nav-container">
+   <f:link.page pageUid="1">
+      <img class="logo" title="logo" alt="logo" src="{f:uri.resource(path: 'Images/logo.jpg', extensionName: 'garden_template')}">
+   </f:link.page>
+   <f:render partial="Navigation/Main" arguments="{_all}" />
+</div>
+
+<div class="container" id="content-container">
+   <f:render partial="Content/Main" arguments="{_all}" />
+</div>
+
+<div class="container" id="footer-container">
+   <f:render partial="Footer/Main" arguments="{_all}" />
+</div>
+    
+    
+    
+   

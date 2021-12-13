@@ -1,0 +1,12 @@
+mysitepackage.page.title = garden template
+
+@import 'EXT:fluid_styled_content/Configuration/Typoscript/constants.typoscript'
+
+page{
+    fluidtemplate {
+        layoutRootPath = EXT:garden_template/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:garden_template/Resources/Private/Partials/Page/
+        templateRootPath = EXT:garden_template/Resources/Private/Templates/Page/
+    }
+}
+

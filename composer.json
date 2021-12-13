@@ -1,0 +1,36 @@
+{
+    "name": "tz/garden-template",
+    "type": "typo3-cms-extension",
+    "description": "template for garden",
+    "authors": [
+            {
+                    "name": "Tobias Ziche",
+                    "role": "Developer",
+                    "homepage": ""
+            }
+    ],
+    "require": {
+            "typo3/cms-core": "^10.4",
+            "typo3/cms-fluid-styled-content": "^10.4"
+    },
+    "homepage": "https://www.publicgarden.de/",
+    "license": "MIT",
+    "keywords": [
+            "typo3",
+            "garden template",
+            "template"
+    ],
+    "support": {
+            "issues": "https://www.publicgarden.de/"
+    },
+    "autoload": {
+            "psr-4": {
+                "Vendor\\GardenTemplate\\": "typo3conf/ext/garden-template/Classes"
+            }
+    },
+    "extra": {
+            "typo3/cms": {
+                    "extension-key": "garden_template"
+            }
+    }
+}
